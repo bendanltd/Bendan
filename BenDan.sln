@@ -3,11 +3,18 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2026
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BenDan.Core", "src\BenDan.Core\BenDan.Core.csproj", "{A222E296-710B-4421-9113-40505DC25A84}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BenDan.Core", "src\BenDan.Core\BenDan.Core.csproj", "{A222E296-710B-4421-9113-40505DC25A84}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BenDan.Api", "src\BenDan.Api\BenDan.Api.csproj", "{EFFA50AC-4FF9-42A3-B35B-8B2D68132FDD}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BenDan.Infrastructure", "src\BenDan.Infrastructure\BenDan.Infrastructure.csproj", "{7F861B49-641E-4034-9E75-6DD3584944A6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{0A2F5CA9-C3ED-4E09-9182-E29DDB451723}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{41B52324-2518-4F51-9890-AD4DD68B6B4F}"
+	ProjectSection(SolutionItems) = preProject
+		test\Readme.md = test\Readme.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,6 +37,11 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A222E296-710B-4421-9113-40505DC25A84} = {0A2F5CA9-C3ED-4E09-9182-E29DDB451723}
+		{EFFA50AC-4FF9-42A3-B35B-8B2D68132FDD} = {0A2F5CA9-C3ED-4E09-9182-E29DDB451723}
+		{7F861B49-641E-4034-9E75-6DD3584944A6} = {0A2F5CA9-C3ED-4E09-9182-E29DDB451723}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6FE10C79-82A6-4FB7-BB06-639576A221F4}
