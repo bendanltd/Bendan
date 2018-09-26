@@ -13,11 +13,11 @@ namespace BenDan.Infrastructure.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    Title = table.Column<string>(nullable: true),
-                    Body = table.Column<string>(nullable: true),
-                    Author = table.Column<string>(nullable: true),
+                    Title = table.Column<string>(maxLength: 100, nullable: true),
+                    Body = table.Column<string>(type: "CLOB", nullable: true),
+                    Author = table.Column<string>(maxLength: 50, nullable: true),
                     LastModified = table.Column<DateTime>(nullable: false),
-                    Remark = table.Column<string>(maxLength: 200, nullable: false)
+                    Remark = table.Column<string>(maxLength: 200, nullable: true)
                 },
                 constraints: table =>
                 {

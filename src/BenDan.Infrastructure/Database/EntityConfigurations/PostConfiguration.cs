@@ -11,10 +11,10 @@ namespace BenDan.Infrastructure.Database.EntityConfigurations
     {
         public void Configure(EntityTypeBuilder<Post> builder)
         {
-            builder.Property(x => x.Author).IsRequired().HasMaxLength(50);
-            builder.Property(x => x.Title).IsRequired().HasMaxLength(100);
-            builder.Property(x => x.Body).IsRequired().HasColumnType("CLOB");
-            builder.Property(x => x.Remark).IsRequired().HasMaxLength(200);
+            builder.Property(x => x.Author).IsRequired(false).HasMaxLength(50);
+            builder.Property(x => x.Title).IsRequired(false).HasMaxLength(100);
+            builder.Property(x => x.Body).IsRequired(false).HasColumnType("CLOB");
+            builder.Property(x => x.Remark).IsRequired(false).HasMaxLength(200);
         }
     }
 }

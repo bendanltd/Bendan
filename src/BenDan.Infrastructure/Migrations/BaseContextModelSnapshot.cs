@@ -21,17 +21,19 @@ namespace BenDan.Infrastructure.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Author");
+                    b.Property<string>("Author")
+                        .HasMaxLength(50);
 
-                    b.Property<string>("Body");
+                    b.Property<string>("Body")
+                        .HasColumnType("CLOB");
 
                     b.Property<DateTime>("LastModified");
 
                     b.Property<string>("Remark")
-                        .IsRequired()
                         .HasMaxLength(200);
 
-                    b.Property<string>("Title");
+                    b.Property<string>("Title")
+                        .HasMaxLength(100);
 
                     b.HasKey("Id");
 
