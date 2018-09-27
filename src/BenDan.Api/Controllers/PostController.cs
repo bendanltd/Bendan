@@ -28,6 +28,7 @@ namespace BenDan.Api.Controllers
         public async Task<IActionResult> Get()
         {
             var posts = await _postRepository.GetAllPosts();
+            throw new Exception("Error!!!!!!!!!!!");
             return Ok(posts);
         }
 

@@ -29,7 +29,7 @@ namespace BenDan.Api
                 catch (Exception e)
                 {
                     var logger = loggerFactory.CreateLogger<Program>();
-                    logger.LogError(e, "Erro occured seeding the Database");
+                    logger.LogError(e, "Error occured seeding the Database");
                 }
 
             }
