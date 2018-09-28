@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using BenDan.Core.Entities;
 using BenDan.Core.Interfaces;
 using BenDan.Infrastructure.Database;
+using BenDan.Infrastructure.Resources;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -17,19 +19,26 @@ namespace BenDan.Api.Controllers
     {
         private readonly IPostRepository _postRepository;
         private readonly IUnitOfWork _unitOfWork;
+        private readonly IMapper _mapper;
 
-        public PostController(IPostRepository postRepository, IUnitOfWork unitOfWork)
+        public PostController(
+            IPostRepository postRepository, 
+            IUnitOfWork unitOfWork,
+            IMapper mapper)
         {
             _postRepository = postRepository;
             _unitOfWork = unitOfWork;
+            _mapper = mapper;
         }
 
         [HttpGet]
         public async Task<IActionResult> Get()
         {
             var posts = await _postRepository.GetAllPosts();
-            throw new Exception("Error!!!!!!!!!!!");
-            return Ok(posts);
+
+            var postResources = _mapper.Map<IEnumerable<Post>, IEnumerable<PostResource>>(posts);
+       
+            return Ok(postResources);
         }
 
         [HttpPost]

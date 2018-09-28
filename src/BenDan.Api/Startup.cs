@@ -1,7 +1,10 @@
-﻿using BenDan.Api.Extensions;
+﻿using AutoMapper;
+using BenDan.Api.Extensions;
 using BenDan.Core.Interfaces;
 using BenDan.Infrastructure.Database;
 using BenDan.Infrastructure.Repositories;
+using BenDan.Infrastructure.Resources;
+using FluentValidation;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -41,6 +44,10 @@ namespace BenDan.Api
 
             services.AddScoped<IPostRepository, PostRepository>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+            services.AddAutoMapper();
+
+            services.AddTransient<IValidator<PostResource>, PostResourceValidator>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
